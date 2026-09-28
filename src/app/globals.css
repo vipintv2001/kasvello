@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f8f9fa;
+  --color-carbon: #0f172a;
+  --color-carbon-muted: #475569;
+  --color-carbon-light: #64748b;
+  --color-kasvello-orange: #ff5b00;
+  --color-kasvello-orange-hover: #e04f00;
+  --color-card-border: rgba(226, 232, 240, 0.8);
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: #f8f9fa;
+  --foreground: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #0f172a;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar for clean editorial light feel */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5b00;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(255, 91, 0, 0.2);
+  color: #0f172a;
+}
+
+/* Soft layered studio shadow */
+.shadow-studio {
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.04);
+}
+
+.shadow-studio-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-studio-hover:hover {
+  box-shadow: 0 20px 40px -15px rgba(255, 91, 0, 0.12), 0 0 0 1px rgba(255, 91, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Ambient warm glow */
+.glow-warm {
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 91, 0, 0.12) 0%,
+    rgba(255, 170, 0, 0.05) 50%,
+    transparent 80%
+  );
+}
+
+/* Subtle dot grid for editorial studio look */
+.bg-subtle-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}

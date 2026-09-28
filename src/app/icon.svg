@@ -1,0 +1,27 @@
+<svg viewBox="0 0 70 70" width="70" height="70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="70" height="70" rx="18" fill="#FF5B00" />
+  <!-- Distinctive Kasvello Icon: Oval 'O' with broadcast radar -->
+  <g transform="translate(13, 11)">
+    <ellipse cx="22" cy="24" rx="17" ry="23" fill="#FFFFFF" />
+    <g transform="translate(11, 13)">
+      <path
+        d="M 3 13 A 8 8 0 0 1 19 13"
+        stroke="#0F172A"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M 6 15 A 5 5 0 0 1 16 15"
+        stroke="#0F172A"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M 11 11 L 16 20 L 11 17.5 L 6 20 Z"
+        fill="#0F172A"
+      />
+    </g>
+  </g>
+</svg>
