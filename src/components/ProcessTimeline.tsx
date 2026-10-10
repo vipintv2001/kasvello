@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Search,
   Compass,
@@ -86,74 +85,96 @@ export default function ProcessTimeline() {
         {/* Stepped Timeline */}
         <div className="relative">
           {/* Central Connecting Vertical Line for Desktop */}
-          <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-slate-200" />
+          <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-slate-200/80" />
 
-          <div className="space-y-12">
+          <div className="space-y-10 md:space-y-12">
             {steps.map((item, index) => {
               const isEven = index % 2 === 0;
 
               return (
-                <motion.div
+                <div
                   key={item.step}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative flex flex-col md:flex-row items-center gap-8"
+                  className="relative flex flex-col md:flex-row items-center group"
                 >
-                  {/* Content Column */}
-                  <div
-                    className={`w-full md:w-1/2 ${
-                      isEven ? "md:text-right md:pr-10" : "md:order-last md:text-left md:pl-10"
-                    }`}
-                  >
-                    <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/40 transition-all duration-300 group">
-                      <div
-                        className={`flex items-center gap-2.5 mb-3 ${
-                          isEven ? "md:justify-end" : "md:justify-start"
-                        }`}
-                      >
-                        <span className="text-[11px] font-bold tracking-widest text-[#FF5B00] uppercase">
-                          Phase {item.step}
-                        </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                        <span className="text-[11px] font-semibold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full">
-                          {item.highlight}
-                        </span>
-                      </div>
+                  {/* Left Column (Desktop) / Main Card (if Even) */}
+                  <div className="w-full md:w-1/2 md:pr-10 order-2 md:order-1">
+                    {isEven ? (
+                      <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 md:text-right">
+                        <div className="flex items-center gap-2.5 mb-3 md:justify-end">
+                          <span className="text-[11px] font-bold tracking-widest text-[#FF5B00] uppercase">
+                            Phase {item.step}
+                          </span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                          <span className="text-[11px] font-semibold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                            {item.highlight}
+                          </span>
+                        </div>
 
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] font-[family-name:var(--font-jakarta)] mb-1">
-                        {item.title}
-                      </h3>
-                      <div className="text-xs font-semibold text-slate-500 mb-3">
-                        {item.subtitle}
-                      </div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] font-[family-name:var(--font-jakarta)] mb-1">
+                          {item.title}
+                        </h3>
+                        <div className="text-xs font-semibold text-slate-500 mb-3">
+                          {item.subtitle}
+                        </div>
 
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-                        {item.description}
-                      </p>
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                          {item.description}
+                        </p>
 
-                      <div
-                        className={`pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-[#FF5B00] ${
-                          isEven ? "md:justify-end" : "md:justify-start"
-                        }`}
-                      >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5B00] shrink-0" />
-                        <span className="font-semibold text-slate-700">
-                          Deliverable: <span className="text-slate-900">{item.deliverable}</span>
-                        </span>
+                        <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-[#FF5B00] md:justify-end">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5B00] shrink-0" />
+                          <span className="font-semibold text-slate-700">
+                            Deliverable: <span className="text-slate-900">{item.deliverable}</span>
+                          </span>
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="hidden md:block w-full" />
+                    )}
                   </div>
 
                   {/* Center Node / Step Indicator */}
-                  <div className="relative z-10 shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-white border-2 border-[#FF5B00] shadow-md shadow-[#FF5B00]/20 text-[#FF5B00] font-bold font-mono text-sm">
+                  <div className="relative z-10 shrink-0 mb-4 md:mb-0 order-1 md:order-2 flex items-center justify-center w-12 h-12 rounded-2xl bg-white border-2 border-[#FF5B00] shadow-md shadow-[#FF5B00]/20 text-[#FF5B00] font-bold font-mono text-sm group-hover:bg-[#FF5B00] group-hover:text-white transition-colors duration-300">
                     {item.step}
                   </div>
 
-                  {/* Opposite Blank Space for layout balance */}
-                  <div className="hidden md:block w-1/2" />
-                </motion.div>
+                  {/* Right Column (Desktop) / Main Card (if Odd) */}
+                  <div className="w-full md:w-1/2 md:pl-10 order-3">
+                    {!isEven ? (
+                      <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left">
+                        <div className="flex items-center gap-2.5 mb-3 justify-start">
+                          <span className="text-[11px] font-bold tracking-widest text-[#FF5B00] uppercase">
+                            Phase {item.step}
+                          </span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                          <span className="text-[11px] font-semibold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                            {item.highlight}
+                          </span>
+                        </div>
+
+                        <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] font-[family-name:var(--font-jakarta)] mb-1">
+                          {item.title}
+                        </h3>
+                        <div className="text-xs font-semibold text-slate-500 mb-3">
+                          {item.subtitle}
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                          {item.description}
+                        </p>
+
+                        <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-[#FF5B00] justify-start">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5B00] shrink-0" />
+                          <span className="font-semibold text-slate-700">
+                            Deliverable: <span className="text-slate-900">{item.deliverable}</span>
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="hidden md:block w-full" />
+                    )}
+                  </div>
+                </div>
               );
             })}
           </div>

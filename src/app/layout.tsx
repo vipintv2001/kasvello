@@ -19,8 +19,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://kasvello.in"),
   title: {
-    default: "Kasvello | Creative Digital Growth Agency | Kasaragod, Kerala",
-    template: "%s | Kasvello Creative Digital Growth Agency",
+    default: "Kasvello — Creative Digital Growth Agency",
+    template: "%s | Kasvello",
   },
   description:
     "Kasvello is a premier creative digital growth agency in Kasaragod, Kerala. We help ambitious businesses scale through data-backed performance ads, high-intent SEO, modern Next.js websites, and engaging brand storytelling.",
@@ -43,8 +43,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://kasvello.in",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
-    title: "Kasvello | Creative Digital Growth Agency | Kasaragod, Kerala",
+    title: "Kasvello — Creative Digital Growth Agency",
     description:
       "Ideas that connect. Strategies that grow. High-intent SEO, performance advertising, and modern Next.js web systems from Kasaragod, Kerala.",
     url: "https://kasvello.in",
@@ -53,19 +62,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Kasvello Creative Digital Agency",
+        alt: "Kasvello Creative Digital Growth Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kasvello | Creative Digital Growth Agency",
+    title: "Kasvello — Creative Digital Growth Agency",
     description:
       "Ideas that connect. Strategies that grow. Local roots with digital reach.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
     creator: "@kasvello",
   },
   robots: {
@@ -79,6 +88,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLdWebSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://kasvello.in/#website",
+    name: "Kasvello",
+    alternateName: ["Kasvello Agency", "Kasvello Digital Growth Agency"],
+    url: "https://kasvello.in",
+  };
+
   const jsonLdProfessionalService = {
     "@context": "https://schema.org",
     "@type": ["ProfessionalService", "LocalBusiness"],
@@ -163,6 +181,12 @@ export default function RootLayout({
       className={`${jakarta.variable} h-full scroll-smooth antialiased`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdWebSite),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   MapPin,
   Globe2,
@@ -61,13 +60,7 @@ export default function AboutSection() {
           {/* Right Column: Core Beliefs & Vision */}
           <div className="lg:col-span-6 space-y-6">
             {/* What We Believe Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/30 transition-all"
-            >
+            <div className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
               <div className="flex items-center gap-3 mb-3">
                 <div className="p-2 rounded-xl bg-amber-50 text-amber-600">
                   <HeartHandshake className="w-5 h-5" />
@@ -81,16 +74,10 @@ export default function AboutSection() {
                 is about forging an authentic bridge between an extraordinary product or service and the exact
                 people who need it — engineered to produce measurable, recurring business revenue.
               </p>
-            </motion.div>
+            </div>
 
             {/* Our Vision Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/30 transition-all"
-            >
+            <div className="p-7 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
               <div className="flex items-center gap-3 mb-3">
                 <div className="p-2 rounded-xl bg-[#FF5B00]/10 text-[#FF5B00]">
                   <Globe2 className="w-5 h-5" />
@@ -104,16 +91,10 @@ export default function AboutSection() {
                 through relentless creative innovation, modern web engineering, and rigorous, data-backed digital
                 performance strategy.
               </p>
-            </motion.div>
+            </div>
 
             {/* Guiding Operating Principles */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="p-5 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2.5"
-            >
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2.5">
               <div className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
                 Our Non-Negotiables:
               </div>
@@ -131,7 +112,7 @@ export default function AboutSection() {
                   <span>Next-Gen Speed</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

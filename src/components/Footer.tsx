@@ -168,7 +168,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
           <div>
-            &copy; {currentYear} Kasvello (kasvello.in). All rights reserved.
+            &copy; {currentYear} Kasvello. All rights reserved.
           </div>
 
           {/* Tech & Origin Badge */}

@@ -10,12 +10,12 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#F8F9FA] text-[#0F172A] selection:bg-[#FF5B00]/20 selection:text-[#0F172A] flex flex-col justify-between">
+    <div className="relative min-h-screen bg-[#F8F9FA] text-[#0F172A] selection:bg-[#FF5B00]/20 selection:text-[#0F172A] flex flex-col">
       {/* Fixed Navbar */}
       <Navbar />
 
       {/* Main Page Sections */}
-      <main className="flex-1 w-full overflow-hidden">
+      <main className="flex-1 w-full overflow-x-clip">
         {/* Section 2: Hero Section */}
         <Hero />
 

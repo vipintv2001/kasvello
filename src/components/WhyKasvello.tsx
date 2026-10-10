@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   UserCheck,
   BarChart3,
@@ -95,13 +94,9 @@ export default function WhyKasvello() {
           {advantages.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative p-8 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/40 transition-all duration-300 group"
+                className="relative p-8 rounded-3xl bg-white border border-slate-200/80 shadow-studio hover:border-[#FF5B00]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="p-3 rounded-2xl bg-[#FF5B00]/10 text-[#FF5B00] group-hover:bg-[#FF5B00] group-hover:text-white transition-colors duration-300">
@@ -117,7 +112,7 @@ export default function WhyKasvello() {
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
         </div>

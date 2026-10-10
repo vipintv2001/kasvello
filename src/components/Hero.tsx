@@ -15,7 +15,7 @@ import {
 
 export default function Hero() {
   return (
-    <section className="relative pt-36 pb-20 overflow-hidden flex flex-col justify-between">
+    <section className="relative pt-36 pb-20 overflow-hidden">
       {/* Ambient Orange/Amber Radial Mesh Background */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] sm:w-[950px] h-[550px] bg-gradient-to-b from-[#FF5B00]/15 via-[#FFAA00]/8 to-transparent rounded-full opacity-35 blur-3xl" />
@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-subtle-grid opacity-60 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_35%,#000_70%,transparent_100%)]" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10 my-auto">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
         {/* Elegant Pill Tag */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -60,7 +60,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal"
         >
-          We help ambitious businesses scale through data-backed performance ads, high-intent SEO,
+          Kasvello is a creative digital growth agency helping ambitious businesses scale through data-backed performance ads, high-intent SEO,
           modern websites, and engaging brand storytelling.{" "}
           <span className="text-slate-900 font-semibold underline decoration-[#FF5B00]/40 decoration-2 underline-offset-4">
             Local roots with digital reach.
