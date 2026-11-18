@@ -50,18 +50,21 @@ export default function FaqAccordion() {
   };
 
   return (
-    <section id="faq" className="relative py-28 px-4 sm:px-6 scroll-mt-20">
+    <section id="faq" className="relative py-32 px-4 sm:px-6 scroll-mt-20 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-emerald-500/[0.03] rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF5B00]/10 border border-[#FF5B00]/20 text-[#FF5B00] text-xs font-bold mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold mb-4 font-mono">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Clarity &amp; Transparency</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight font-[family-name:var(--font-jakarta)]">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#f8fafc] tracking-tight font-[family-name:var(--font-jakarta)]">
             Frequently Asked Questions.
           </h2>
-          <p className="mt-4 text-slate-600 text-sm sm:text-base">
+          <p className="mt-4 text-slate-400 text-sm sm:text-base">
             Everything you need to know about our growth frameworks, pricing philosophy, and engineering standards.
           </p>
         </div>
@@ -75,8 +78,8 @@ export default function FaqAccordion() {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "bg-white border-[#FF5B00]/40 shadow-studio"
-                    : "bg-white border-slate-200/80 hover:border-slate-300"
+                    ? "bg-[#080a0f] border-emerald-500/40 shadow-[0_0_25px_rgba(16,185,129,0.12)]"
+                    : "bg-[#080a0f]/80 border-white/[0.08] hover:border-white/20"
                 }`}
               >
                 <button
@@ -87,18 +90,18 @@ export default function FaqAccordion() {
                   aria-controls={`content-${faq.id}`}
                 >
                   <div className="flex items-center gap-3 pr-4">
-                    <span className="hidden sm:inline-block text-[11px] font-bold text-[#FF5B00] bg-[#FF5B00]/10 px-2.5 py-0.5 rounded-full shrink-0">
+                    <span className="hidden sm:inline-block text-[11px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full shrink-0">
                       {faq.badge}
                     </span>
-                    <span className="text-base sm:text-lg font-bold text-[#0F172A] tracking-tight font-[family-name:var(--font-jakarta)]">
+                    <span className="text-base sm:text-lg font-bold text-[#f8fafc] tracking-tight font-[family-name:var(--font-jakarta)]">
                       {faq.question}
                     </span>
                   </div>
                   <div
                     className={`p-2 rounded-xl transition-all duration-200 shrink-0 ${
                       isOpen
-                        ? "bg-[#FF5B00] text-white rotate-180"
-                        : "bg-slate-100 text-slate-500 hover:text-slate-800"
+                        ? "bg-emerald-500 text-[#040507] rotate-180"
+                        : "bg-white/[0.04] text-slate-400 hover:text-white"
                     }`}
                   >
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -114,7 +117,7 @@ export default function FaqAccordion() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
-                      <div className="px-5 sm:px-6 pb-6 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100">
+                      <div className="px-5 sm:px-6 pb-6 pt-1 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-white/[0.06]">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -126,10 +129,10 @@ export default function FaqAccordion() {
         </div>
 
         {/* Bottom CTA for unlisted questions */}
-        <div className="mt-12 p-6 rounded-3xl bg-white border border-slate-200/80 shadow-studio text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-[#080a0f]/90 border border-white/[0.08] backdrop-blur-xl shadow-2xl text-center flex flex-col sm:flex-row items-center justify-between gap-5">
           <div className="text-left">
-            <div className="text-sm font-bold text-slate-900">Have a specific or unlisted question?</div>
-            <div className="text-xs text-slate-500 mt-0.5">
+            <div className="text-sm font-bold text-[#f8fafc]">Have a specific or unlisted question?</div>
+            <div className="text-xs text-slate-400 mt-0.5">
               Talk directly with our strategy founders — no sales gatekeepers.
             </div>
           </div>
@@ -137,7 +140,7 @@ export default function FaqAccordion() {
             href="https://wa.me/?text=Hi%20Kasvello%20team,%20I%20have%20a%20question%20about%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 transition-colors shadow-md shadow-emerald-600/20 shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold text-[#040507] bg-emerald-400 hover:bg-emerald-300 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] shrink-0 font-mono"
           >
             <MessageCircle className="w-4 h-4" />
             <span>Ask Us On WhatsApp</span>

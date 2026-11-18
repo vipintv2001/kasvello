@@ -1,16 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
 export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
+  themeColor: "#040507",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -178,9 +170,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} h-full scroll-smooth antialiased`}
+      className="h-full scroll-smooth antialiased dark"
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -200,7 +198,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F8F9FA] text-[#0F172A] selection:bg-[#FF5B00]/20 selection:text-[#0F172A]">
+      <body className="min-h-full flex flex-col bg-[#040507] text-[#f8fafc] selection:bg-emerald-500/25 selection:text-[#f8fafc] overflow-x-clip">
         {children}
       </body>
     </html>
